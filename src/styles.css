@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+html body{
+  margin: 0%;
+  padding: 1%;
+  background-color: black;
+}
+
+p {
+  margin: 0% !important;
+  padding: 0%;
+}
+
+.mat-bottom-sheet-container {
+  background: transparent;
+}
+
+.mdc-menu-surface {
+  background-color: #322E2E;
+}
+
+.mdc-list-item__primary-text {
+  color: whitesmoke;
+}
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: whitesmoke;
+  border-radius: 30px;
+}
+
+.disable-scroll {
+  overflow: hidden;
+}

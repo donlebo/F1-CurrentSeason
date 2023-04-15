@@ -1,0 +1,33 @@
+<div *ngIf="show">
+  <div style="display: flex; justify-content: center;">
+    <img style="width: 300px; margin-top: 100px;" src="assets/logo3D.gif" alt="">
+  </div>
+  <h3 style="margin-top: -80px; font-size: 13px; text-align: center;">Your content is loading..</h3>
+</div>
+
+<table *ngIf="!show" mat-table [dataSource]="constructorStandings" style="height: 100vh; background-color: #322E2E;" class="mat-elevation-z8">
+  <ng-container matColumnDef="position">
+    <th mat-header-cell *matHeaderCellDef style="color: white;">Position</th>
+    <td mat-cell *matCellDef="let element" (click)="goToConstructorDetails(element)" style="color: white;">{{ element.position }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef style="color: white;">Name</th>
+    <td mat-cell *matCellDef="let element" (click)="goToConstructorDetails(element)" style="color: white;">{{ element.Constructor.name }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="wins">
+    <th mat-header-cell *matHeaderCellDef style="color: white;">Wins</th>
+    <td mat-cell *matCellDef="let element" (click)="goToConstructorDetails(element)" style="color: white;">{{ element.wins }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="points">
+    <th mat-header-cell *matHeaderCellDef style="color: white;">Points</th>
+    <td mat-cell *matCellDef="let element" (click)="goToConstructorDetails(element)" style="color: white;">{{ element.points }}</td>
+  </ng-container>
+
+  <!-- Aggiungi altre colonne qui... -->
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

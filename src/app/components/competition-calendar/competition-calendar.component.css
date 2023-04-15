@@ -1,0 +1,23 @@
+.card {
+  width: 60%;
+  background-color: #322E2E;
+  color: whitesmoke;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: #ff0000;
+  color: rgb(255, 255, 255);
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:2;
+}

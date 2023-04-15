@@ -1,0 +1,23 @@
+<div *ngIf="show">
+  <div style="display: flex; justify-content: center;">
+    <img style="width: 300px; margin-top: 100px;" src="assets/logo3D.gif" alt="">
+  </div>
+  <h3 style="margin-top: -80px; font-size: 13px; text-align: center;">Your content is loading..</h3>
+</div>
+
+<div *ngIf="!show" class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <p style="color: whitesmoke; font-size: 15px; padding-top: 10px; padding-left: 10px;">{{constructorDetails?.Constructors[0].name}} - {{constructorDetails?.Constructors[0].nationality}}</p>
+    </mat-card-header>
+    <img mat-card-image src={{imagePath}} alt="Driver image" style="max-width: 100%; object-fit: cover; padding: 20px;">
+    <mat-card-content style="padding: 15px; text-align: center;">
+      <p style="text-align: justify;">Formula 1 constructors are companies specialized in the design, construction and development of racing cars for competition in the top automotive series. <br>
+       Every year, the constructors compete in the Formula 1 World Championship, trying to achieve the greatest possible success. <br>
+       In addition to the design and construction of the cars, the Formula 1 constructors are also responsible for their ongoing development, both during and between seasons.</p>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: center;">
+      <button mat-flat-button color="warn" style="width: 180px; margin-bottom: 15px; background-color: rgb(255, 11, 21); color: whitesmoke;"><a style="text-decoration: none; color: whitesmoke;" href={{constructorDetails?.Constructors[0].url}} target="_blank">Learn more</a></button>
+    </mat-card-actions>
+  </mat-card>
+</div>

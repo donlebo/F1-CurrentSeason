@@ -1,0 +1,25 @@
+<form style="border:1px whitesmoke">
+  <div class="container">
+    <div class="logo1">
+      <img class="logo" src="../../../assets/logo.png" alt="">
+    </div>
+    <p style="text-align: center;">Please fill in this form to acess to your account.</p>
+    <hr>
+    <label for="email"><b>Email</b></label>
+    <input autocapitalize="none" type="text" placeholder="Enter your email" name="email" [(ngModel)]="email" required>
+    <label for="password"><b>Password</b></label>
+    <div class="eyes">
+      <input autocapitalize="none" class="eyes" [type]="hide ? 'password' : 'text'" placeholder="Enter password" name="password" [(ngModel)]="password" required>
+      <div *ngIf="hide == true">
+        <mat-icon style="margin: 10px" matSuffix (click)="myFunction()">visibility</mat-icon>
+      </div>
+      <div *ngIf="hide == false">
+        <mat-icon style="margin: 10px; color:rgb(255, 0, 0)" matSuffix (click)="myFunction()">visibility</mat-icon>
+      </div>
+    </div>
+    <p>If you don't have an account <a href="signup" style="color:rgb(255, 0, 0)">sign up </a>here.</p>
+    <div class="clearfix">
+      <button type="button" (click)="login()" class="signupbtn">Login</button>
+    </div>
+  </div>
+</form>

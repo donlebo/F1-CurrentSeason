@@ -1,0 +1,80 @@
+<div *ngIf="show">
+  <div style="display: flex; justify-content: center;">
+    <img style="width: 300px; margin-top: 100px;" src="assets/logo3D.gif" alt="">
+  </div>
+  <h3 style="margin-top: -80px; font-size: 13px; text-align: center;">Your content is loading..</h3>
+</div>
+
+<div *ngIf="!show">
+  <div *ngIf="teamName">
+    <h3 style="text-align: center; margin: 0%; margin-top: 25px;">{{teamName}}</h3>
+    <div class="container">
+      <img mat-card-image src="../../../assets/team.png" alt="Driver image" style="max-width: 380px; object-fit: cover; padding: 20px;">
+    </div>
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+      <div style="background-color: red; width: 100px; border-radius: 30px;">
+        <p style="font-size: 10px; text-align: center;">Captain points x2</p>
+      </div>
+      <div>
+        <mat-card class="card" style="width: 250px; margin-top: 15px;">
+          <mat-card-content style="padding: 15px; text-align: center;">
+            <p>Captain: {{driver1}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div>
+        <mat-card class="card" style="width: 250px; margin-top: 15px;">
+          <mat-card-content style="padding: 15px; text-align: center;">
+            <p>Driver: {{driver2}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+      <div>
+        <mat-card class="card" style="width: 250px; margin-top: 15px;">
+          <mat-card-content style="padding: 15px; text-align: center;">
+            <p>Driver: {{driver3}}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+
+  <div class="cardForm" *ngIf="!teamName">
+    <div style="display: flex; justify-content: center; margin: 50px;">
+      <img src="../../../assets/logo.png" alt="" width="100%" style=" width: 300px;">
+    </div>
+    <form [formGroup]="squadForm" (ngSubmit)="submitForm()">
+      <div style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 20px;">
+        <label><b>Squad name</b></label>
+      </div>
+      <div style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 20px;">
+        <input type="text" matInput formControlName="teamName" placeholder="Choose a squad name" style="width: 100%; height: 50px; border-radius: 30px; border: none; text-align: center;">
+      </div>
+      <div style="display: flex; justify-content: space-around; align-items: center; margin-bottom: 20px;">
+        <label><b>Squad members</b></label>
+      </div>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose captain</mat-label>
+        <mat-select formControlName="driver1">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let driver of drivers" [value]="driver.Driver.driverId">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose the second member</mat-label>
+        <mat-select formControlName="driver2">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let driver of drivers" [value]="driver.Driver.driverId">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Choose the third member</mat-label>
+        <mat-select formControlName="driver3">
+          <mat-option>None</mat-option>
+          <mat-option *ngFor="let driver of drivers" [value]="driver.Driver.driverId">{{ driver.Driver.givenName }} {{ driver.Driver.familyName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-flat-button style="background-color: rgb(255, 11, 21); color: whitesmoke;" type="submit" [disabled]="!squadForm.valid">Create your team</button>
+    </form>
+  </div>
+</div>

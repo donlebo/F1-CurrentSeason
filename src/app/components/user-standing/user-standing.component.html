@@ -1,0 +1,34 @@
+<div *ngIf="show">
+  <div style="display: flex; justify-content: center;">
+    <img style="width: 300px; margin-top: 100px;" src="assets/logo3D.gif" alt="">
+  </div>
+  <h3 style="margin-top: -80px; font-size: 13px; text-align: center;">Your content is loading..</h3>
+</div>
+
+<mat-table *ngIf="!show" [dataSource]="dataSource" style="background-color: #322E2E;" class="mat-elevation-z8">
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef style="color: whitesmoke; justify-content: center;">Position</mat-header-cell>
+    <mat-cell *matCellDef="let element; let i = index" style="color: whitesmoke; justify-content: center; font-size: 12px;">{{i + 1}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="teamName">
+    <mat-header-cell *matHeaderCellDef style="color: whitesmoke; justify-content: center;">Team</mat-header-cell>
+    <mat-cell *matCellDef="let element" style="color: whitesmoke; justify-content: center; font-size: 12px;">{{element.teamName}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="points">
+    <mat-header-cell *matHeaderCellDef style="color: whitesmoke; justify-content: center;">Points</mat-header-cell>
+    <mat-cell *matCellDef="let element" style="color: whitesmoke; justify-content: center; font-size: 12px;">{{element.totalPoints}}</mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="info">
+    <mat-header-cell *matHeaderCellDef style="color: whitesmoke; justify-content: center;">Teams components</mat-header-cell>
+    <mat-cell *matCellDef="let element" [matMenuTriggerFor]="menu" style="justify-content: center;"> <mat-icon style="color: whitesmoke;">info</mat-icon>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>{{element.driver1}}</button>
+        <button mat-menu-item>{{element.driver2}}</button>
+        <button mat-menu-item>{{element.driver3}}</button>
+      </mat-menu>
+    </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+

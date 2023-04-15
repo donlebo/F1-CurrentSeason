@@ -1,0 +1,19 @@
+<div class="container">
+  <mat-card *ngFor='let article of articlesWithImage' class="card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar style="background-image: url({{imagePath}}); background-size: cover;"></div> -->
+      <h3 style="color: whitesmoke; padding-top: 10px; text-align: center;">{{article?.title}} <br> <p style="font-size: 12px;">From {{article?.source.name}} at {{article?.publishedAt}}</p> </h3>
+    </mat-card-header>
+    <div *ngIf="article.urlToImage">
+      <img mat-card-image src={{article?.urlToImage}} alt="" style="max-width: 100%; object-fit: cover; padding: 20px;">
+    </div>
+    <mat-card-content style="padding: 15px; text-align: center;">
+      <p >
+        {{article?.content}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: center;">
+      <button mat-flat-button color="warn" style="width: 200px; margin-bottom: 5px; background-color: rgb(255, 11, 21); color: whitesmoke;"><a style="text-decoration: none; color: whitesmoke;" href={{article?.url}} target="_blank">Learn more</a></button>
+    </mat-card-actions>
+  </mat-card>
+</div>

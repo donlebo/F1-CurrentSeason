@@ -1,0 +1,32 @@
+<div *ngIf="show">
+  <div style="display: flex; justify-content: center;">
+    <img style="width: 300px; margin-top: 100px;" src="assets/logo3D.gif" alt="">
+  </div>
+  <h3 style="margin-top: -80px; font-size: 13px; text-align: center;">Your content is loading..</h3>
+</div>
+
+<div *ngIf="!show" class="container">
+  <mat-card class="card">
+    <mat-card-header>
+      <!-- <div mat-card-avatar style="background-image: url({{imagePath}}); background-size: cover;"></div> -->
+      <p style="color: whitesmoke; font-size: 15px; padding-top: 10px; padding-left: 10px;">{{selectedCompetition.raceName}}</p>
+    </mat-card-header>
+    <div>
+      <img mat-card-image src={{imagePath}} alt="Circuit image" style="max-width: 100%; object-fit: cover; padding: 20px;">
+    </div>
+    <mat-card-content style="padding: 15px; text-align: center;">
+      <p>Round: {{selectedCompetition.round}}</p>
+      <p>Season: {{selectedCompetition.season}}</p>
+      <p>Time: {{selectedCompetition.time}}</p>
+      <p>Date: {{selectedCompetition.date}}</p>
+      <p>Location: {{selectedCompetition.Circuit.Location.country}} - {{selectedCompetition.Circuit.Location.locality}}</p>
+      <p>Circuit: {{selectedCompetition.Circuit.circuitName}}</p>
+    </mat-card-content>
+    <mat-card-actions style="display: flex; justify-content: center;">
+      <button mat-flat-button color="warn" style="width: 200px; margin-bottom: 5px; background-color: rgb(255, 11, 21);"><a style="text-decoration: none; color: whitesmoke;" href={{selectedCompetition.Circuit.url}} target="_blank">Learn more on circuit</a></button>
+    </mat-card-actions>
+    <mat-card-actions style="display: flex; justify-content: center;">
+      <button mat-flat-button color="warn" style="width: 200px; margin-bottom: 15px; background-color: rgb(255, 11, 21); color: whitesmoke;" (click)="openBottomSheet()">See race calendar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

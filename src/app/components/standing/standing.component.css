@@ -1,0 +1,7 @@
+table {
+  width: 100px;
+}
+
+.mdc-data-table__table{
+  max-width: 60%;
+}

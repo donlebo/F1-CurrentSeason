@@ -1,0 +1,15 @@
+.card {
+  max-width: 400px;
+  background-color: #322E2E;
+  color: whitesmoke;
+  margin-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow-x: hidden;
+  margin-top: 10px;
+}
+

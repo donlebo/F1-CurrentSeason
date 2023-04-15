@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card class="card">
+
+    <mat-card-content style="padding: 15px; text-align: center; color: whitesmoke;" *ngIf="selectedCompetition.FirstPractice">
+      <p style="color: whitesmoke; font-size: 15px; padding-top: 10px; text-align: center;">First day of practice</p>
+      <p>Time: {{selectedCompetition.FirstPractice.time}}</p>
+      <p>Date: {{selectedCompetition.FirstPractice.date}}</p>
+    </mat-card-content>
+
+    <mat-card-content style="padding: 15px; text-align: center; color: whitesmoke;" *ngIf="selectedCompetition.SecondPractice">
+      <p style="color: whitesmoke; font-size: 15px; padding-top: 10px; text-align: center;">Second day of practice</p>
+      <p>Time: {{selectedCompetition.SecondPractice.time}}</p>
+      <p>Date: {{selectedCompetition.SecondPractice.date}}</p>
+    </mat-card-content>
+
+    <mat-card-content style="padding: 15px; text-align: center; color: whitesmoke;" *ngIf="selectedCompetition.ThirdPractice">
+      <p style="color: whitesmoke; font-size: 15px; padding-top: 10px; text-align: center;">Third day of practice</p>
+      <p>Time: {{selectedCompetition.ThirdPractice.time}}</p>
+      <p>Date: {{selectedCompetition.ThirdPractice.date}}</p>
+    </mat-card-content>
+
+    <mat-card-content style="padding: 15px; text-align: center; color: whitesmoke;" *ngIf="selectedCompetition.Qualifying">
+      <p style="color: whitesmoke; font-size: 15px; padding-top: 10px; text-align: center;">Qualify day</p>
+      <p>Time: {{selectedCompetition.Qualifying.time}}</p>
+      <p>Date: {{selectedCompetition.Qualifying.date}}</p>
+    </mat-card-content>
+
+    <mat-card-content style="padding: 15px; text-align: center; color: orangered;" *ngIf="selectedCompetition.Sprint">
+      <p style="color: orangered; font-size: 15px; padding-top: 10px; text-align: center;">Sprint day</p>
+      <p>Time: {{selectedCompetition.Sprint.time}}</p>
+      <p>Date: {{selectedCompetition.Sprint.date}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
