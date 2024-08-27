@@ -39,6 +39,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { UserStandingComponent } from './components/user-standing/user-standing.component';
 import { TokenInterceptorInterceptor } from './interceptors/token-interceptor.interceptor';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { TokenInterceptorInterceptor } from './interceptors/token-interceptor.in
     SignupComponent,
     LoginComponent,
     UserStandingComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

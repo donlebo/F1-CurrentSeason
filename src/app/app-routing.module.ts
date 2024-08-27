@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'home/competitions', component: CompetitionsComponent },
   { path: 'competitions/:id', component: CompetitionDetailsComponent },
   { path: 'f1-news', component: F1NewsComponent },
-  { path: 'welcome-to-f1/home', component: HomeComponent },
+  //{ path: 'welcome-to-f1/home', component: HomeComponent },
   { path: 'home/teams', component: SquadComponent },
   { path: 'home/teamsStanding', component: UserStandingComponent }
 ]

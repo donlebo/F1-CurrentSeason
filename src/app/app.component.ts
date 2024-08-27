@@ -20,7 +20,7 @@ export class AppComponent {
       if (hasCompletedSlider) {
         this.router.navigate(['/home']);
       } else {
-        this.router.navigate(['/welcome-to-f1']);
+        this.router.navigate(['/home']);
       }
     } else {
       const isRegistering = window.location.pathname === '/signup';

@@ -31,11 +31,11 @@ export interface RootObjectNews  {
 })
 export class ResultsService {
 
-  private driverStandings = 'https://ergast.com/api/f1/2023/driverStandings.json';
+  private driverStandings = 'https://ergast.com/api/f1/2024/driverStandings.json';
   private constructorStandings = 'https://ergast.com/api/f1/current/constructorStandings.json';
   private driverDetails = 'https://ergast.com/api/f1/drivers/'
   private constructorDetails = `https://ergast.com/api/f1/constructors/`;
-  private competitions = 'https://ergast.com/api/f1/2023.json'
+  private competitions = 'https://ergast.com/api/f1/2024.json'
 
   constructor(private http: HttpClient) { }
 
